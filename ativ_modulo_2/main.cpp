@@ -59,13 +59,35 @@ class MotocicletaAVenda : public VeiculoAVenda{
     void mostraDados()override{cout<<" cilindrada: "+to_string(this->cilindrada)<<endl;}
 };
 
+struct Somatoria {
+  float car1;
+  float car2;
+  float moto1;
+  float moto2;
+  float total;
+};
+
 int main() {
 
   AutomovelAVenda car1(1.4,true);
   AutomovelAVenda car2(1.0,false);
+  car1.mostraDados();
+  car2.mostraDados();
 
   MotocicletaAVenda moto1(125);
   MotocicletaAVenda moto2(100);
+  moto1.mostraDados();
+  moto2.mostraDados();
+
+  Somatoria somatoria;
+  somatoria.car1 = car1.getPrecoVenda();
+  somatoria.car2 = car2.getPrecoVenda();
+  somatoria.moto2 = moto2.getPrecoVenda();
+  somatoria.moto1 = moto1.getPrecoVenda();
+  somatoria.total = car1.getPrecoVenda() + car2.getPrecoVenda() + moto2.getPrecoVenda() + moto1.getPrecoVenda();
+
+  cout << somatoria.total;
+
 
 
 }
