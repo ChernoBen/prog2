@@ -45,6 +45,7 @@ class AutomovelAVenda  : public VeiculoAVenda{
     void mostraDados()override{cout<<"motor: "+ to_string(this->motor)<<" cambio automatico: " + to_string(this->cambio);}
 };
 
+//3
 class MotocicletaAVenda : public VeiculoAVenda{
   private:
     int cilindrada;
