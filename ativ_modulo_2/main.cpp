@@ -22,8 +22,9 @@ class VeiculoAVenda{
     string getModelo(){return this->modelo;}
     int getAno(){return this->ano;}
     float getPrecoVenda(){return this->precoVenda;}
-    virtual void mostraDados(){
-      cout<<"marca: " + this->marca <<" modelo: "+this->modelo<<" ano: "+to_string(this->ano)<<" preco venda: "+to_string(this->precoVenda)<<endl;
+    virtual string mostraDados(){
+      string dados = "marca: " + this->marca +" modelo: "+this->modelo+" ano: "+to_string(this->ano)+" preco venda: "+to_string(this->precoVenda);
+      return dados;
     }
 };
 
@@ -34,7 +35,7 @@ class AutomovelAVenda  : public VeiculoAVenda{
     bool cambio;
   
   public:
-    AutomovelAVenda(float engine,bool transmission):VeiculoAVenda("brand","carro",2000,35000),motor(engine),cambio(transmission){}
+    AutomovelAVenda(float engine,bool transmission):VeiculoAVenda("brand","carro",2000,35000),motor(engine),cambio(true){}
 
 
     void setMotor(float engine){this->motor = engine;}
@@ -43,7 +44,7 @@ class AutomovelAVenda  : public VeiculoAVenda{
     float getMotor(){return this->motor;}
     bool getCambio(){return this->cambio;}
 
-    void mostraDados()override{cout<<"motor: "+ to_string(this->motor)<<" cambio automatico: " + to_string(this->cambio)<<endl;}
+    string mostraDados()override{return "marca: "+this->getMarca()+" modelo: "+this->getModelo()+" ano: "+to_string(this->getAno())+" preco: "+to_string(this->getPrecoVenda())+" motor: "+ to_string(this->motor)+" cambio automatico: " + to_string(this->cambio);}
 };
 
 //3
@@ -56,16 +57,17 @@ class MotocicletaAVenda : public VeiculoAVenda{
     void setCilindrada(int cc){this->cilindrada = cc;}
 
     int getCilindrada(){return this->cilindrada;}
-    void mostraDados()override{cout<<" cilindrada: "+to_string(this->cilindrada)<<endl;}
+    string mostraDados()override{return "marca: "+this->getMarca()+" modelo: "+this->getModelo()+" ano: "+to_string(this->getAno())+" preco: "+to_string(this->getPrecoVenda())+" cilindrada: "+to_string(this->cilindrada);}
 };
 
-struct Somatoria {
-  float car1;
-  float car2;
-  float moto1;
-  float moto2;
+struct {
+  string car1;
+  string car2;
+  string moto1;
+  string moto2;
   float total;
-};
+  
+}total;
 
 int main() {
 
@@ -76,18 +78,13 @@ int main() {
 
   MotocicletaAVenda moto1(125);
   MotocicletaAVenda moto2(100);
-  moto1.mostraDados();
-  moto2.mostraDados();
 
-  Somatoria somatoria;
-  somatoria.car1 = car1.getPrecoVenda();
-  somatoria.car2 = car2.getPrecoVenda();
-  somatoria.moto2 = moto2.getPrecoVenda();
-  somatoria.moto1 = moto1.getPrecoVenda();
-  somatoria.total = car1.getPrecoVenda() + car2.getPrecoVenda() + moto2.getPrecoVenda() + moto1.getPrecoVenda();
+  total.car1 = car1.mostraDados(); 
+  total.car2 = car2.mostraDados();
+  total.moto2 = moto2.mostraDados();
+  total.moto1 = moto1.mostraDados();
+  total.total = car1.getPrecoVenda() + car2.getPrecoVenda() + moto2.getPrecoVenda() + moto1.getPrecoVenda();
 
-  cout << somatoria.total;
-
-
-
+  cout<<total.car1<<endl<<total.car2<<endl<<total.moto1<<endl<<total.moto2;
+ 
 }
