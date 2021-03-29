@@ -45,6 +45,19 @@ class AutomovelAVenda  : public VeiculoAVenda{
     void mostraDados()override{cout<<"motor: "+ to_string(this->motor)<<" cambio automatico: " + to_string(this->cambio);}
 };
 
+class MotocicletaAVenda : public VeiculoAVenda{
+  private:
+    int cilindrada;
+
+  public:
+    MotocicletaAVenda(int cc):VeiculoAVenda("brand","moto",2005,15000),cilindrada(cc){};
+    void setCilindrada(int cc){this->cilindrada = cc;}
+
+    int getCilindrada(){return this->cilindrada;}
+    void mostraDados()override{cout<<" cilindrada: "+to_string(this->cilindrada);}
+};
+
+
 int main() {
  
 }
