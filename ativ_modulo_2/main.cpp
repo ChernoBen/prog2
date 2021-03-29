@@ -37,7 +37,6 @@ class AutomovelAVenda  : public VeiculoAVenda{
   public:
     AutomovelAVenda(float engine,bool transmission):VeiculoAVenda("brand","carro",2000,35000),motor(engine),cambio(true){}
 
-
     void setMotor(float engine){this->motor = engine;}
     void setCambio(bool transmission){this->cambio = transmission;}
 
@@ -54,8 +53,8 @@ class MotocicletaAVenda : public VeiculoAVenda{
 
   public:
     MotocicletaAVenda(int cc):VeiculoAVenda("brand","moto",2005,15000),cilindrada(cc){};
-    void setCilindrada(int cc){this->cilindrada = cc;}
 
+    void setCilindrada(int cc){this->cilindrada = cc;}
     int getCilindrada(){return this->cilindrada;}
     string mostraDados()override{return "marca: "+this->getMarca()+" modelo: "+this->getModelo()+" ano: "+to_string(this->getAno())+" preco: "+to_string(this->getPrecoVenda())+" cilindrada: "+to_string(this->cilindrada);}
 };
