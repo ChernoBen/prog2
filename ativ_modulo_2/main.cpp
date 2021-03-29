@@ -84,6 +84,6 @@ int main() {
   total.moto1 = moto1.mostraDados();
   total.total = car1.getPrecoVenda() + car2.getPrecoVenda() + moto2.getPrecoVenda() + moto1.getPrecoVenda();
 
-  cout<<total.car1<<endl<<total.car2<<endl<<total.moto1<<endl<<total.moto2;
+  cout<<total.car1<<endl<<total.car2<<endl<<total.moto1<<endl<<total.moto2<<endl<<" total: "+ to_string(total.total);
  
 }
