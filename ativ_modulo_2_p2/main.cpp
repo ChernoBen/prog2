@@ -9,7 +9,7 @@ protected:
 	string nome;
 	int codigoFuncional;
 	double salario = 1000;
-	
+
 public:
 	Funcionario(string nome, int codigoFuncional,double salario):nome(nome),codigoFuncional(codigoFuncional),salario(salario){};
 
@@ -58,7 +58,10 @@ public:
 	string getUniversidade(){return this->universidade;}
 };
 
-	
+double aumentaRenda(double renda,double porcentagem){
+	double valor = ((porcentagem * renda) / 100 ) + renda;
+	return renda;
+};
 
 
 
