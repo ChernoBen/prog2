@@ -10,7 +10,7 @@ protected:
 	int codigoFuncional;
 	double salario;
 public:
-	Funcionario(string nome, int codigoFuncional):nome(nome),codigoFuncional(codigoFuncional){};
+	Funcionario(string nome, int codigoFuncional,double salario):nome(nome),codigoFuncional(codigoFuncional),salario(salario){};
 
 	void setNome(string nome){this->nome = nome;}
 	void setSalario(double salario){this->salario = salario;}
@@ -26,15 +26,12 @@ class FuncionarioBasico : public Funcionario{
 private:
 	string escola;
 public:
-	Funcionario(string escola):Funcionario(nome,codigoFuncional,salario),escola(escola){
-		this->nome = nome;
-		this->codigoFuncional = codigoFuncional;
-		this->salario = salario
-	}
+	FuncionarioBasico(string escola):Funcionario("nome",1,1500),escola(escola){
+  };
 	void imprimeDados(){
 		cout<< this->escola<< this->nome<< this->codigoFuncional<< this->salario<<endl;
 	}
-}
+};
 
 
 
