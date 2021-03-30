@@ -8,7 +8,8 @@ class Funcionario{
 protected:
 	string nome;
 	int codigoFuncional;
-	double salario;
+	double salario = 1000;
+	
 public:
 	Funcionario(string nome, int codigoFuncional,double salario):nome(nome),codigoFuncional(codigoFuncional),salario(salario){};
 
@@ -23,16 +24,41 @@ public:
 };
 
 class FuncionarioBasico : public Funcionario{
-private:
+protected:
 	string escola;
+
 public:
-	FuncionarioBasico(string escola):Funcionario("nome",1,1500),escola(escola){
-  };
-	void imprimeDados(){
-		cout<< this->escola<< this->nome<< this->codigoFuncional<< this->salario<<endl;
-	}
+	FuncionarioBasico(string escola):Funcionario("nome",1,1500),escola(escola){};
+	
+	void setEscola(string escola){this->escola = escola;}
+	string getEscola(){return this->escola;}
+
 };
 
+class FuncionarioMedio : public FuncionarioBasico{
+
+protected:
+	string colegio;
+
+public:
+	FuncionarioMedio(string colegio):FuncionarioBasico("escola"),colegio(colegio){};
+
+	void setColegio(string colegio){this->colegio;}
+	string getColegio(){return this->colegio;}
+};
+
+class FuncionarioSuperior:public FuncionarioMedio{
+protected:
+	string universidade;
+
+public:
+	FuncionarioSuperior(string universidade):FuncionarioMedio("colegio"),universidade(universidade){};
+
+	void setUniversidade(string universidade){this->universidade = universidade;}
+	string getUniversidade(){return this->universidade;}
+};
+
+	
 
 
 
