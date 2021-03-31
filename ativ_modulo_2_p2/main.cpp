@@ -18,7 +18,7 @@ class Funcionario{
     void setCodigoFuncional(int codigoFuncional){this->codigoFuncional = codigoFuncional;}
 
     string getNome(){return this->nome;}
-    virtual double getSalario(){return this->salario;}
+    double getSalario(){return this->salario;}
     int getCodigoFuncional(){return this->codigoFuncional;}
 
 };
