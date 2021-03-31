@@ -98,7 +98,10 @@ int main() {
   vf.push_back(&f10);
 
   for (auto f : vf){
-    
+    /*
+	adicionar estrutura condicional para avaliar tipo de funcionario
+		definir valores de cada classe com setters
+    */
   }
   
 }
