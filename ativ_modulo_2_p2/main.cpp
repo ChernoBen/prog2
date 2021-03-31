@@ -65,5 +65,5 @@ public:
 
 
 int main() {
-  
+  vector<char> funcionario [10];
 }
