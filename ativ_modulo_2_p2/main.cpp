@@ -60,6 +60,7 @@ public:
 	double getSalario()override{return this->getSalario()*2;}
 };
 
+
 /*
 nome,
 cod
@@ -70,8 +71,34 @@ universidade
 */
 
 int main() {
-  string funcionario [10] = {"pedro","tiago","joao","marcos","mateus","calos","alberto","felipe","daniel","aurelio"};
+  vector <Funcionario*> vf;
 
-  FuncionarioBasico basico("Alda Scopel");
-  basico.setSalario(basico.getSalario());
+  FuncionarioBasico f1 ("Escola Joao");
+  FuncionarioBasico f2 ("Escola Joaquin");
+  FuncionarioBasico f3 ("Escola Jordan");
+  FuncionarioBasico f4 ("Escola Jonas");
+  
+  FuncionarioMedio f5 ("Colegio 1");
+  FuncionarioMedio f6 ("Colegio 2");
+  FuncionarioMedio f7 ("Colegio 3");
+  FuncionarioMedio f8 ("Colegio 4");
+
+  FuncionarioSuperior f9 ("Universidade 1");
+  FuncionarioSuperior f10 ("Universidade 2");
+
+  vf.push_back(&f1);
+  vf.push_back(&f2);
+  vf.push_back(&f3);
+  vf.push_back(&f4);
+  vf.push_back(&f5);
+  vf.push_back(&f6);
+  vf.push_back(&f7);
+  vf.push_back(&f8);
+  vf.push_back(&f9);
+  vf.push_back(&f10);
+
+  for (auto f : vf){
+    
+  }
+  
 }
