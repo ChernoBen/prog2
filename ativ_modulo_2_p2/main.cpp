@@ -60,10 +60,18 @@ public:
 	double getSalario()override{return this->getSalario()*2;}
 };
 
-
-//fazer override no metodo set salario
-
+/*
+nome,
+cod
+salario
+escola
+colegio
+universidade
+*/
 
 int main() {
-  vector<char> funcionario [10];
+  string funcionario [10] = {"pedro","tiago","joao","marcos","mateus","calos","alberto","felipe","daniel","aurelio"};
+
+  FuncionarioBasico basico("Alda Scopel");
+  basico.setSalario(basico.getSalario());
 }
