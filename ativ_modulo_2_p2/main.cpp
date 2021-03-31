@@ -18,7 +18,7 @@ public:
 	void setCodigoFuncional(int codigoFuncional){this->codigoFuncional = codigoFuncional;}
 
 	string getNome(){return this->nome;}
-	double getSalario(){return this->salario;}
+	virtual double getSalario(){return this->salario;}
 	int getCodigoFuncional(){return this->codigoFuncional;}
 
 };
@@ -32,7 +32,7 @@ public:
 	
 	void setEscola(string escola){this->escola = escola;}
 	string getEscola(){return this->escola;}
-
+	double getSalario()override{return this->getSalario()+((10 * this->getSalario())/100);}
 };
 
 class FuncionarioMedio : public FuncionarioBasico{
@@ -43,8 +43,9 @@ protected:
 public:
 	FuncionarioMedio(string colegio):FuncionarioBasico("escola"),colegio(colegio){};
 
-	void setColegio(string colegio){this->colegio;}
+	void setColegio(string colegio){this->colegio = colegio;}
 	string getColegio(){return this->colegio;}
+	double getSalario()override{return this->getSalario()+(this->getSalario()/2);}
 };
 
 class FuncionarioSuperior:public FuncionarioMedio{
@@ -56,12 +57,9 @@ public:
 
 	void setUniversidade(string universidade){this->universidade = universidade;}
 	string getUniversidade(){return this->universidade;}
+	double getSalario()override{return this->getSalario()*2;}
 };
 
-double aumentaRenda(double renda,double porcentagem){
-	double valor = ((porcentagem * renda) / 100 ) + renda;
-	return renda;
-};
 
 //fazer override no metodo set salario
 
