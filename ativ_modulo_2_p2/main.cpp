@@ -63,7 +63,7 @@ double aumentaRenda(double renda,double porcentagem){
 	return renda;
 };
 
-
+//fazer override no metodo set salario
 
 
 int main() {
