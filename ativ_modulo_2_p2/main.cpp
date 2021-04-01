@@ -71,6 +71,7 @@ universidade
 */
 
 int main() {
+  Funcionario fPadrao("Padrao",0,1000,"Escola")
   vector <Funcionario*> vf;
   double total;
   FuncionarioBasico f1 ("joao",1,1000,"Escola Joao");
