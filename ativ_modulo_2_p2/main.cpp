@@ -61,19 +61,11 @@ class FuncionarioSuperior:public FuncionarioMedio{
 };
 
 
-/*
-nome,
-cod
-salario
-escola
-colegio
-universidade
-*/
-
 int main() {
-  Funcionario fPadrao("Padrao",0,1000,"Escola")
+  
   vector <Funcionario*> vf;
   double total;
+
   FuncionarioBasico f1 ("joao",1,1000,"Escola Joao");
   FuncionarioBasico f2 ("jordan",2,1000,"Escola Joaquin");
   FuncionarioBasico f3 ("joana",3,1000,"Escola Jordan");
