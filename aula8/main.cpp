@@ -24,7 +24,7 @@ class Produto{
 
 };
 
-class ComboProduto : Produto{
+class ComboProduto : public Produto{
   private:
     double totalValor;
     int quantidadeItens;
@@ -32,23 +32,26 @@ class ComboProduto : Produto{
   public:
     ComboProduto(double totalValor,int quantidadeItens,double preco, string nome):Produto(preco,nome),totalValor(totalValor),quantidadeItens(quantidadeItens){};
 
-    friend Produto combinarProdutos(Produto &p1, Produto &p2);
+    friend ComboProduto combinarProdutos(Produto &p1, Produto &p2);
+    double getTotalValor(){return totalValor;}
+    int getQtdItens(){return quantidadeItens;}
 };
 
-Produto CombinarProduto(Produto &p1, Produto &p2){
-  double totalValor = p1.getPreco() +  p2.getPreco();
+ComboProduto CombinarProdutos(Produto &p1, Produto &p2){
+  string espaco = " | ";
+  double totalValor = p1.getPreco() + p2.getPreco();
   double desconto = totalValor - (totalValor * 0.15);
-  string produtos = p1.getNome() + p2.getNome();
-  Produto combo(desconto,produtos);
+  string produtos = p1.getNome() + espaco + p2.getNome();
+  ComboProduto combo(desconto,2,totalValor,produtos);
   return combo;
   
 };
 
 int main() {
-
+  
   Produto p1(500," Prod1 ");
   Produto p2(500," Prod2 ");
-  Produto combo = CombinarProduto(p1,p2);
-  cout<<endl<<combo.getNome()<<endl<<combo.getPreco()<<endl;
+  ComboProduto combo = CombinarProdutos(p1,p2);
+  cout<<endl<<"produtos: "<<combo.getNome()<<endl<<"valor sem desconto: "<<combo.getPreco()<<"Preco: "<<combo.getTotalValor()<<endl<<"Quantidade: "<<combo.getQtdItens()<<endl;
 
 }
