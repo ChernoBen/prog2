@@ -52,9 +52,9 @@ int main() {
   
   //2 b) Se a palavra chave override não for utilizada na sobrescrita do metodo calculaArea entao esse metodo será um metodo da classe filha "retangulo".
 
-  //2 c) O tipo de retorno da função sobrescrita é uma constante double e deve ser igual ao tipo de retorno da função da classe pai, caso não seja então ocorrera conflito.
+  //2 c) O tipo de retorno da função sobrescrita é uma constante double e deve ser igual ao tipo de retorno da função da classe pai, caso não seja então ocorrerá conflito.
   
-  //2 d) O ponteiro só poderá invocar metodos da e atributos da classe pai(Forma geometrica), asolução para a impressão do metodo oi em retangulo é tornar o metodo oi da classe pai um metodo virtual e realizar o override na classe filha.
+  //2 d) O ponteiro só poderá invocar métodos e atributos da classe pai(Forma geometrica), a solução para a impressão do método oi em retangulo é tornar o método "oi" da classe pai um metodo virtual e realizar o override na classe filha.
   
   Retangulo retangulo(10,15);
   FormaGeomtrica *forma;
