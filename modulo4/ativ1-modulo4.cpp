@@ -25,8 +25,8 @@ std::cout << '(' << p.get_first() << ", " << p.get_second() << ")\n";
 
 template<typename F>
 F maximum(const F &v1,const F &v2){
-  if(less<F>()(v1,v2)) return v1;
-  if (less<F>()(v2,v1))return v2;
+  if(less<F>()(v1,v2)) return v2;
+  if (less<F>()(v2,v1))return v1;
   return 0;
 }
 
